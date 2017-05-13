@@ -12,6 +12,7 @@ class Usuario implements Serializable {
 
 	transient springSecurityService
 
+	String fullname
 	String username
 	String password
 	Arquivo avatar
@@ -56,6 +57,7 @@ class Usuario implements Serializable {
 		password blank: false, password: true
 		username blank: false, unique: true
 		avatar nullable: true
+		fullname nullable: true
 	}
 
 	static mapping = {
