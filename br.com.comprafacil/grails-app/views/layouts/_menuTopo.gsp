@@ -8,6 +8,9 @@
                     <g:if test="${Usuario.hasAcesso(Role.findByAuthority('ROLE_ADMIN'))}">
                         <li><a href="${createLink(controller: "produto", action: "index")}" style="text-transform: capitalize"><g:message code="menu.item.produtos.label"/></a></li>
                     </g:if>
+                    <g:if test="${Usuario.hasAcesso(Role.findByAuthority('ROLE_ADMIN'))}">
+                        <li><a href="${createLink(controller: "fabricante", action: "index")}" style="text-transform: capitalize"><g:message code="menu.item.fabricantes.label"/></a></li>
+                    </g:if>
                 </ul>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="#" style="text-transform: capitalize"><sec:loggedInUserInfo field="username" /></a></li>
