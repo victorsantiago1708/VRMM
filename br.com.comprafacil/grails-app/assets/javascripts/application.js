@@ -16,8 +16,10 @@ if (typeof $ !== 'undefined') {
     (function($) {
         $(document).ajaxStart(function() {
             $('.load').fadeIn();
+            Materialize.updateTextFields();
         }).ajaxStop(function() {
             $('.load').fadeOut();
+            Materialize.updateTextFields();
         });
     })($);
 
