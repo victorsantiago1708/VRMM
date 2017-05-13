@@ -105,7 +105,7 @@ class CrudController{
         boolean edit = params.id ? true:false
         boolean editPai = params.editPai ? true:false
         entityInstance = getEntityInstance()
-        println(entityInstance.properties)
+        println(entityInstance.errors)
         if( edit && entityInstance.hasProperty( 'isEditavel' ) && entityInstance.isEditavel == false )
         {
             flash.error = message( code: 'default.dont.edit.message' )
