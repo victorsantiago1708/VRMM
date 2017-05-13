@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/VRMM.iml" filepath="$PROJECT_DIR$/VRMM.iml" />
-      <module fileurl="file://$PROJECT_DIR$/compraFacil/compraFacil.iml" filepath="$PROJECT_DIR$/compraFacil/compraFacil.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/VRMM.iml" filepath="$PROJECT_DIR$/.idea/VRMM.iml" />
+      <module fileurl="file://C:\projetos\VRMM\VRMM.iml" filepath="C:\projetos\VRMM\VRMM.iml" />
+      <module fileurl="file://C:\projetos\VRMM\compraFacil\compraFacil.iml" filepath="C:\projetos\VRMM\compraFacil\compraFacil.iml" />
     </modules>
   </component>
 </project>
