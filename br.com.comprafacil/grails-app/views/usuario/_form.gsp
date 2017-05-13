@@ -1,4 +1,5 @@
 <form onsubmit="save('${createLink(controller: 'usuario', action: 'save')}', this)" method="POST">
+    <input type="hidden" name="id" id="id" value="${entityInstance?.id}"/>
     <div class="row nopad" style="border-bottom: 1px solid #ccc;">
         <div class="col s8">
             <h1>
@@ -15,19 +16,19 @@
     </div>
     <div class="row nopad">
         <div class="input-field col s4">
-            <input id="username" name="username" type="text" value="${entityInstance?.username}">
-            <label for="username"><g:message code="usuario.username.label"/> </label>
-            <g:hasErrors bean="${entityInstance}" field="username">
-                <span class="help-block">
-                    <g:renderErrors bean="${entityInstance}" field="username"/>
+            <input id="fullname" name="fullname" type="text" value="${entityInstance?.fullname}">
+            <label for="fullname"><g:message code="usuario.username.label"/> </label>
+            <g:hasErrors bean="${entityInstance}" field="fullname">
+                <span class="help-block error">
+                    <g:renderErrors bean="${entityInstance}" field="fullname"/>
                 </span>
             </g:hasErrors>
         </div>
         <div class="input-field col s4">
             <input id="password" name="password" type="text" value="">
-            <label for="password"><g:message code="usuario.password.label"/> </label>
+            <label for="password"><g:message code="usuario.senha.label"/> </label>
             <g:hasErrors bean="${entityInstance}" field="password">
-                <span class="help-block">
+                <span class="help-block error">
                     <g:renderErrors bean="${entityInstance}" field="password"/>
                 </span>
             </g:hasErrors>

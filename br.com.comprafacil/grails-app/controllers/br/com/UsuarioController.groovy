@@ -6,7 +6,8 @@ class UsuarioController extends CrudController {
     def entity = Usuario
 
     def perfil(){
-
+        Usuario user = Usuario.read(springSecurityService.currentUserId)
+        render view: "index", model: ['entityInstance': user]
     }
 
     def uploadAvatar(){

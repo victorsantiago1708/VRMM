@@ -11,7 +11,7 @@
                 </ul>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="#" style="text-transform: capitalize"><sec:loggedInUserInfo field="username" /></a></li>
-                    <li><a href="${createLink(controller: "user", action: "perfil")}"><g:message code="menu.item.perfil.label"/> <i class="fa fa-user"></i></a></li>
+                    <li><a href="${createLink(controller: "usuario", action: "perfil")}"><g:message code="menu.item.perfil.label"/> <i class="fa fa-user"></i></a></li>
                     <li>
                         <g:link controller="logout" >${message(code: 'menu.item.sair.label')} <i class="fa fa-power-off"></i></g:link>
                     </li>

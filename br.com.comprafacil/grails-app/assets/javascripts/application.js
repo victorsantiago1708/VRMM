@@ -12,14 +12,14 @@
 var novo;
 var save;
 
-if (typeof jQuery !== 'undefined') {
+if (typeof $ !== 'undefined') {
     (function($) {
         $(document).ajaxStart(function() {
             $('.load').fadeIn();
         }).ajaxStop(function() {
             $('.load').fadeOut();
         });
-    })(jQuery);
+    })($);
 
 }
 
@@ -38,14 +38,14 @@ $(document).ready(function(){
 
 save = function(path, form){
     var dontSearch = true;
-    var data = jQuery(form).serialize()+"&dontSearch="+dontSearch;
+    var data = $(form).serialize()+"&dontSearch="+dontSearch;
 
-    jQuery.ajax({
+    $.ajax({
         type: 'POST',
         data: data,
         url: path,
         success: function(data, textStatus) {
-            jQuery('#conteudo').html(data);
+            $('#conteudo').html(data);
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) {}
     });
@@ -55,12 +55,11 @@ save = function(path, form){
 
 novo = function(path){
 
-    jQuery.ajax({
+    $.ajax({
         type:'POST',
         url: path,
         success:function(data, textStatus){
-            console.log(data);
-            jQuery('#conteudo').html(data);
+            $('#conteudo').html(data);
         },
         error:function(XMLHttpRequest,textStatus,errorThrown){
 

@@ -11,13 +11,17 @@ class CrudController{
     }
 
     def getEntityInstance(){
+        def entityInstance
+
         if(params.id){
-            return entity.get( params.id )
-        }else{
-            def entityInstance = entity.newInstance()
+            entityInstance = entity.get( params.id )
             entityInstance.properties = params
-            return entityInstance
+        }else{
+            entityInstance = entity.newInstance()
+            entityInstance.properties = params
+
         }
+        return entityInstance
     }
 
     def list(){
@@ -101,7 +105,7 @@ class CrudController{
         boolean edit = params.id ? true:false
         boolean editPai = params.editPai ? true:false
         entityInstance = getEntityInstance()
-
+        println(entityInstance.properties)
         if( edit && entityInstance.hasProperty( 'isEditavel' ) && entityInstance.isEditavel == false )
         {
             flash.error = message( code: 'default.dont.edit.message' )
