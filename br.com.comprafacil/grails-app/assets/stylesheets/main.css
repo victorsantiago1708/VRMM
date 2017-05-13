@@ -24,6 +24,10 @@ html {
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%;
+}
+
 html.no-cssgradients {
     background-color: #aaa;
 }
@@ -685,5 +689,6 @@ nav ul li a:hover{
 }
 
 #conteudo{
-    min-height:52%;
+    height:auto !important;
+    min-height:100%;
 }

@@ -25,6 +25,8 @@ if (typeof $ !== 'undefined') {
 }
 
 $(document).ready(function(){
+    $('select').material_select();
+
     $("form").submit(function(e){
         e.preventDefault(e);
     });
@@ -33,6 +35,7 @@ $(document).ready(function(){
         $("form").submit(function(e){
             e.preventDefault(e);
         });
+        $('select').material_select();
     });
 });
 

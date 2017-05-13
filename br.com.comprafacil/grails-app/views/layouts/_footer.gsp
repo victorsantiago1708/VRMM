@@ -18,7 +18,7 @@
     </div>
     <div class="footer-copyright">
         <div class="container">
-            © 2014 Victor Santiago Todos os direitos reservados
+            © 2017 Victor Santiago Todos os direitos reservados
             <a class="grey-text text-lighten-4 right" href="https://www.facebook.com/victor.santiago.mestrado">
                 <i class="fa fa-facebook fa-3x"></i>
             </a>
