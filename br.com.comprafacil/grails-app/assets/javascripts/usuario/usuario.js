@@ -23,12 +23,31 @@ save = function(path, form){
         data: data,
         contentType: false,
         processData: false,
+        async: false,
         url: path,
         success: function(data, textStatus) {
-            $('#conteudo').html(data);
+            $("#conteudo").html(data);
+            // var user = data['user'];
+            // var avatar = data['avatar'];
+            // var tipo = data['tipo'];
+            //
+            // if(user!=null&&typeof(user)!='undefined'){
+            //     $("#userPhoto").attr("src","data:image/png;bmp;jpg;base64,"+avatar);
+            //     $("#photoUser").attr("src","data:image/png;bmp;jpg;base64,"+avatar);
+            //     $("#fullname").val(user);
+            //     $("#tipo").val(tipo);
+            // }
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) {}
     });
+
+    // $.ajax({
+    //     type:'POST',
+    //     url:'/usuario/renderPerfilPhoto',
+    //     success: function(data){
+    //         $('#photoUser').html(data);
+    //     }
+    // });
 
     return false;
 };

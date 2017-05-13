@@ -36,7 +36,7 @@
 
         <div class="input-field col s4">
             <input id="tipo" name="tipo" disabled type="text" value='${message(code:("usuario.role."+entityInstance?.authorities?.authority?.getAt(0)))}'>
-            <label for="password"><g:message code="usuario.tipo.label"/> </label>
+            <label for="tipo"><g:message code="usuario.tipo.label"/> </label>
         </div>
     </div>
     <div class="row nopad">
@@ -49,8 +49,10 @@
                 <input class="file-path validate" type="text">
             </div>
         </div>
-        <div class="col s4">
-            <img class="responsive-img circle" src="data:image/png;base64,${entityInstance?.avatar?.filedata?.encodeBase64()}" width="80" height="80"/>
-        </div>
+        <g:if test="${entityInstance?.avatar!=null}">
+            <div class="col s4">
+                <img class="responsive-img circle" id="userPhoto" src="data:image/png;bmp;jpg;base64,${entityInstance?.avatar?.filedata?.encodeBase64()}" style="width:80px;height:80px;"/>
+            </div>
+        </g:if>
     </div>
 </form>
