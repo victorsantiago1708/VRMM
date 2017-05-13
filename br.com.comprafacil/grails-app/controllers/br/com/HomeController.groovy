@@ -8,10 +8,6 @@ class HomeController{
     SpringSecurityService springSecurityService
     
     def index(){
-        def model = [:]
-        Usuario user = Usuario.read(springSecurityService.currentUser.id)
-        model.put("user", user)
-        model.put("tipoUsuario", user?.authorities?.authority)
-        render(view: "index", model: model)
+        render(view: "index")
     }
 }

@@ -17,9 +17,6 @@
 </head>
 <body>
     <g:layoutBody/>
-    <div class="container" style="min-height: 100%">
-
-    </div>
 
     <div class="load center" style="display: none">
         <div class="preloader-wrapper big active">

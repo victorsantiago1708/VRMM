@@ -683,3 +683,7 @@ nav ul li a:hover{
     background-color: #f2dede;
     border-color: #ebccd1;
 }
+
+#conteudo{
+    min-height:52%;
+}

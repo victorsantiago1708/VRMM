@@ -3,7 +3,8 @@ var logar;
 
 window.onload = function(){
     $(document).delegate("#logar","click", logar);
-    $(document).delegate("#password", "keyup", function(e){ if(e.keyCode==13){ logar(); } })
+    $(document).delegate("#senha", "keyup", function(e){ if(e.keyCode==13){ logar(); } })
+    Materialize.updateTextFields();
 };
 
 logar = function(){
@@ -11,7 +12,7 @@ logar = function(){
         var url = '/login/authenticate';
         $.ajax({
             url: url,
-            data: {username: $("#username").val(), password: $("#password").val(), 'remember-me': $("#remember_me").val()},
+            data: {username: $("#username").val(), password: $("#senha").val(), 'remember-me': $("#remember_me").val()},
             type: "POST",
             success: function(data){
                 if(typeof(data.error) != 'undefined'){
@@ -22,7 +23,7 @@ logar = function(){
                         confirmButtonText: "Ok"
                     });
                 }else if(typeof(data.success) != 'undefined'){
-                    window.location = "/home";
+                    window.location = "/home/index";
                 }
             },
             error: function(){

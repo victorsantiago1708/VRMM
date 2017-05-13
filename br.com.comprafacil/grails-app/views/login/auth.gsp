@@ -6,7 +6,6 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><g:message code='springSecurity.login.title'/></title>
-    <asset:javascript src="login/login.js"/>
 </head>
 <body >
     <div id="loginBody" class="col s12">
@@ -34,8 +33,8 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="material-icons prefix">lock_outline</i>
-                            <label for="password" data-error="Incorreto" data-success="Certo"><g:message code='springSecurity.login.password.label'/>:</label>
-                            <input type="password" class="validate" name="${passwordParameter ?: 'password'}" id="password"/>
+                            <label for="senha" data-error="Incorreto" data-success="Certo"><g:message code='springSecurity.login.password.label'/>:</label>
+                            <input type="password" class="validate" name="${passwordParameter ?: 'password'}" id="senha"/>
                         </div>
                     </div>
 
@@ -61,10 +60,6 @@
         </div>
     </div>
     </div>
-    <script>
-        (function() {
-            document.forms['loginForm'].elements['${usernameParameter ?: 'username'}'].focus();
-        })();
-    </script>
+    <asset:javascript src="login/login.js"/>
 </body>
 </html>

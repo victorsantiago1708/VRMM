@@ -6,7 +6,6 @@
 // to create separate JavaScript files as needed.
 //
 //= require jquery-2.2.0.min
-//= require_tree .
 //= require_self
 
 var novo;
@@ -41,7 +40,7 @@ $(document).ready(function(){
 save = function(path, form){
     var dontSearch = true;
     var data = $(form).serialize()+"&dontSearch="+dontSearch;
-
+    console.log(path);
     $.ajax({
         type: 'POST',
         data: data,
