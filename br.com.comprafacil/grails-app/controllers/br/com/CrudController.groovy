@@ -127,6 +127,15 @@ class CrudController{
                 }
             }
             else{
+                entityInstance.errors?.each{
+                    def error = it
+                    error.getFieldErrors()?.each{
+                        String messageCode = it.getArguments()[1] + "." + it.getField() + "." + it.getCode() + "." + "error"
+                        println(message(code: messageCode).toString())
+                    }
+
+                }
+
                 afterInvalido( entityInstance, model )
             }
         }

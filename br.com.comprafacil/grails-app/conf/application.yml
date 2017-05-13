@@ -95,12 +95,12 @@ dataSource:
     username: postgres
     password: admin
     url: jdbc:postgresql://localhost:5432/comprafacil
-    dbCreate: update
+    dbCreate: create-drop
 
 environments:
     development:
         dataSource:
-            dbCreate: update
+            dbCreate: create-drop
             url: jdbc:postgresql://localhost:5432/comprafacil
     test:
         dataSource:

@@ -1,6 +1,5 @@
 package br.com
 
-import grails.plugin.springsecurity.SpringSecurityService
 import grails.plugin.springsecurity.SpringSecurityUtils
 import groovy.transform.EqualsAndHashCode
 import groovy.transform.ToString
@@ -15,6 +14,7 @@ class Usuario implements Serializable {
 
 	String username
 	String password
+	Arquivo avatar
 	boolean enabled = true
 	boolean accountExpired
 	boolean accountLocked
@@ -55,6 +55,7 @@ class Usuario implements Serializable {
 	static constraints = {
 		password blank: false, password: true
 		username blank: false, unique: true
+		avatar nullable: true
 	}
 
 	static mapping = {

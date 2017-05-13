@@ -1,4 +1,5 @@
 %{--verificar erros nos campos exp: ${entityInstance?.errors?.hasFieldErrors('descricao') --}%
+<g:render template="/layouts/msg"/>
 <form onsubmit="save('${createLink(controller: 'produto', action: 'save')}', this)" method="POST">
     <div class="row nopad" style="border-bottom: 1px solid #ccc;">
         <div class="col s8">
@@ -17,10 +18,10 @@
     <div class="row nopad">
         <div class="input-field col s3">
             ${renderErrors(bean: 'entityInstance', field:'nome')}
-            <input id="nome" name="nome" type="text" value="${entityInstance?.nome}">
+            <input id="nome" name="nome" type="text" class="${entityInstance?.errors?.hasFieldErrors('nome')? 'error':''}" value="${entityInstance?.nome}">
             <label for="nome"><g:message code="produto.nome.label"/> </label>
             <g:hasErrors bean="${entityInstance}" field="nome">
-                <span class="help-block">
+                <span class="help-block error">
                     <g:renderErrors bean="${entityInstance}" field="nome"/>
                 </span>
             </g:hasErrors>
@@ -29,7 +30,7 @@
             <input id="codigo" name="codigo" type="text" value="${entityInstance?.codigo}">
             <label for="nome"><g:message code="produto.codigo.label"/> </label>
             <g:hasErrors bean="${entityInstance}" field="codigo">
-                <span class="help-block">
+                <span class="help-block error">
                     <g:renderErrors bean="${entityInstance}" field="codigo"/>
                 </span>
             </g:hasErrors>
@@ -38,7 +39,7 @@
             <input id="descricao" name="descricao" type="text" value="${entityInstance?.descricao}">
             <label for="descricao"><g:message code="produto.descricao.label"/> </label>
             <g:hasErrors bean="${entityInstance}" field="descricao">
-                <span class="help-block">
+                <span class="help-block error">
                     <g:renderErrors bean="${entityInstance}" field="descricao"/>
                 </span>
             </g:hasErrors>
@@ -52,7 +53,7 @@
             </select>
             <label><g:message code="produto.fabricante.label"/> </label>
             <g:hasErrors bean="${entityInstance}" field="fabricante">
-                <span class="help-block">
+                <span class="help-block error">
                     <g:renderErrors bean="${entityInstance}" field="fabricante"/>
                 </span>
             </g:hasErrors>

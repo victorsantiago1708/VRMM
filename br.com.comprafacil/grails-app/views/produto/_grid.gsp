@@ -30,7 +30,7 @@
                         ${produto?.fabricante?.nome}
                     </td>
                     <td>
-                        <a class="waves-effect waves-light btn red" href="${createLink(controller: 'produto', action: 'delete', id: produto?.id)}"><i class="fa fa-trash"></i></a>
+                        <a class="waves-effect waves-light btn red" href="${createLink(controller: 'produto', action: 'delete', id: produto?.id)}"><i class="fa fa-trash fa-1x"></i></a>
                     </td>
                 </tr>
             </g:each>
