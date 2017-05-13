@@ -7,6 +7,7 @@ class CrudController{
     def sessionFactory
 
     def index(){
+        println (params)
         list()
     }
 
