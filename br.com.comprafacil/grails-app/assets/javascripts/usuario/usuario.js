@@ -41,13 +41,6 @@ save = function(path, form){
         error: function(XMLHttpRequest, textStatus, errorThrown) {}
     });
 
-    // $.ajax({
-    //     type:'POST',
-    //     url:'/usuario/renderPerfilPhoto',
-    //     success: function(data){
-    //         $('#photoUser').html(data);
-    //     }
-    // });
 
     return false;
 };

@@ -31,6 +31,7 @@
                     </td>
                     <td>
                         <a class="waves-effect waves-light btn red" href="${createLink(controller: 'produto', action: 'delete', id: produto?.id)}"><i class="fa fa-trash fa-1x"></i></a>
+                        <a class="waves-effect waves-light btn red" href="#" onclick="edit('${createLink(controller: 'produto', action: 'edit', id: produto?.id)}')"><i class="fa fa-pencil fa-1x"></i></a>
                     </td>
                 </tr>
             </g:each>

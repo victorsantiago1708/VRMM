@@ -1,3 +1,4 @@
+<g:render template="/layouts/msg"/>
 <form onsubmit="save('${createLink(controller: 'usuario', action: 'save')}', this)" method="POST">
     <input type="hidden" name="id" id="id" value="${entityInstance?.id}"/>
     <div class="row nopad" style="border-bottom: 1px solid #ccc;">

@@ -1,6 +1,7 @@
 package br.com
 
 import grails.plugin.springsecurity.SpringSecurityService
+import grails.web.servlet.mvc.GrailsParameterMap
 
 class CrudController{
     SpringSecurityService springSecurityService
@@ -26,19 +27,43 @@ class CrudController{
     }
 
     def list(){
-        def model = beforeList()?:[:]
-        if(entity){
-            def result = entity.createCriteria().list(query)
-            def entityList = result
-            def entityListCount = entityList?.size()
+        def model = [:]
+//        if(entity){
+//            def result = entity.createCriteria().list(query)
+//            def entityList = result
+//            def entityListCount = entityList?.size()
+//
+//            model.put("entityList", entityList)
+//            model.put("entityListCount", entityListCount)
+//            model = editaModelDoList(model)
+//            render(view: 'index', model: model)
+//        }
 
-            model.put("entityList", entityList)
-            model.put("entityListCount", entityListCount)
-            model = editaModelDoList(model)
-            render(view: 'index', model: model)
+        print "asd"
+
+        if(params.offset==null || params.offset=="null"){
+            params.offset = 0
         }
 
+        def criteria = entity.createCriteria()
+        params.max = Math.min(params.max ? params.int('max') : 10, 100)
+        def entities = criteria.list(query, max: params.max, offset: params.offset)
+        def filters = params
 
+        model = [entityList: entities, entityListCount: entities.totalCount, filters: filters]
+        model = editaModelDoList( model )
+
+        returnList(model)
+    }
+
+    def returnList(LinkedHashMap<String, GrailsParameterMap> model) {
+        if (request.xhr && !params.dontSearch) {
+            render(template: "grid", layout: "ajax", model: model)
+        } else if (params.dontSearch.equals("true")) {
+            render(template: "form", layout: "ajax", model: model)
+        } else {
+            model
+        }
     }
 
     def editaModelPadrao( def model ){
@@ -146,6 +171,7 @@ class CrudController{
             }
         }
 
+        println(flash.message)
         model = editaModelDoSave( model )
 
         returnSave( edit, editPai, entityInstance, model)

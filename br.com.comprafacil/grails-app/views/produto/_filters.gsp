@@ -11,7 +11,7 @@
         </a>
     </div>
 </div>
-<g:form name="myForm" url="[action:'list',controller:'produto']" class="col s12">
+<form name="myForm" onsubmit="list('${createLink(controller: 'produto', action: 'list')}', this)" method="POST" class="col s12">
     <div class="row nopad">
         <div class="input-field col s3">
             <input id="nome" name="nome" type="text" >
@@ -23,7 +23,7 @@
         </div>
         <div class="input-field col s3 m3">
             <select name="fabricante" id="fabricante" class="icons">
-                <option value="" disabled selected><g:message code="default.selecione.label"/></option>
+                <option value="" selected><g:message code="default.selecione.label"/></option>
                 <g:each in="${fabricantes}" var="fabricante">
                     <option value="${fabricante?.id}" data-icon="images/sample-1.jpg" class="circle">${fabricante?.nome}</option>
                 </g:each>
@@ -38,4 +38,4 @@
             </button>
         </div>
     </div>
-</g:form>
+</form>

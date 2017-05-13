@@ -8,6 +8,7 @@ class UsuarioController extends CrudController {
     def entity = Usuario
 
     def perfil(){
+        flash.clear()
         Usuario user = Usuario.read(springSecurityService.currentUserId)
         render view: "index", model: ['entityInstance': user]
     }
