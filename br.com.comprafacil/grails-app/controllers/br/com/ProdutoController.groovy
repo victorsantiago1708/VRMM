@@ -2,7 +2,9 @@ package br.com
 
 class ProdutoController extends CrudController{
     def entity = Produto
+
     def query = {
+        println(params)
         if(params.nome){
             ilike('nome',params.nome+ "%")
         }

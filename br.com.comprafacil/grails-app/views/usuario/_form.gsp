@@ -39,4 +39,18 @@
             <label for="password"><g:message code="usuario.tipo.label"/> </label>
         </div>
     </div>
+    <div class="row nopad">
+        <div class="file-field input-field col s4">
+            <div class="btn">
+                <span><g:message code="usuario.avatar.label"/></span>
+                <input type="file" id="file" name="file">
+            </div>
+            <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+            </div>
+        </div>
+        <div class="col s4">
+            <img class="responsive-img circle" src="data:image/png;base64,${entityInstance?.avatar?.filedata?.encodeBase64()}" width="80" height="80"/>
+        </div>
+    </div>
 </form>

@@ -13,6 +13,9 @@
     <asset:stylesheet src="font-awesome-4.7.0/css/font-awesome.css"/>
     <asset:stylesheet src="materialize/css/materialize.css"/>
     <asset:stylesheet src="sweetalert-master/dist/sweetalert.css"/>
+    <asset:javascript src="application.js"/>
+    <asset:javascript src="sweetalert-master/dist/sweetalert-dev.js"/>
+    <asset:javascript src="materialize/js/materialize.js"/>
     <g:layoutHead/>
 </head>
 <body>
@@ -34,9 +37,7 @@
     </div>
 
     <input type="hidden" id="erroSwall" value="${message(code:'default.swall.error.label')}"/>
-    <asset:javascript src="application.js"/>
-    <asset:javascript src="sweetalert-master/dist/sweetalert-dev.js"/>
-    <asset:javascript src="materialize/js/materialize.js"/>
+
     <script>
         $(document).ready(function() {
             Materialize.updateTextFields();

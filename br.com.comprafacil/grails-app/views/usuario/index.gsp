@@ -13,8 +13,10 @@
 </head>
 <body>
     <g:render template="/layouts/menuTopo"/>
+    <asset:javascript src="usuario/usuario.js"/>
     <div class="container" id="conteudo">
         <g:render template="form"/>
     </div>
+
 </body>
 </html>

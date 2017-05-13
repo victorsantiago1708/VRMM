@@ -14,6 +14,17 @@
                 </ul>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="#" style="text-transform: capitalize"><sec:loggedInUserInfo field="username" /></a></li>
+
+                    <g:if test="${session}">
+
+                        <li>
+                            <a href="#">
+                                ${session}
+                                <img class="responsive-img circle" src="data:image/png;base64,${avatar?.filedata?.encodeBase64()}" width="80" height="80"/>
+                            </a>
+                        </li>
+                    </g:if>
+
                     <li><a href="${createLink(controller: "usuario", action: "perfil")}"><g:message code="menu.item.perfil.label"/> <i class="fa fa-user"></i></a></li>
                     <li>
                         <g:link controller="logout" >${message(code: 'menu.item.sair.label')} <i class="fa fa-power-off"></i></g:link>

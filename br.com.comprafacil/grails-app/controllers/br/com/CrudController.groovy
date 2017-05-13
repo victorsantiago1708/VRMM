@@ -7,6 +7,7 @@ class CrudController{
     def sessionFactory
 
     def index(){
+        flash.clear()
         list()
     }
 
@@ -87,6 +88,7 @@ class CrudController{
     def beforeSave(def entityInstance, def model){}
 
     def delete(){
+        flash.clear()
         def entityInstance = getEntityInstance()
         try {
             entityInstance.delete(flush: true)
