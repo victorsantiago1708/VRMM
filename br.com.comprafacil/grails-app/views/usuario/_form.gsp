@@ -42,7 +42,7 @@
     </div>
     <div class="row nopad">
         <div class="file-field input-field col s4">
-            <div class="btn">
+            <div class="btn blue lighten-1">
                 <span><g:message code="usuario.avatar.label"/></span>
                 <input type="file" id="file" name="file">
             </div>

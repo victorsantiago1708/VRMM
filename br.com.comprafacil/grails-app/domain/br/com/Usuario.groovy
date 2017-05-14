@@ -48,7 +48,9 @@ class Usuario implements Serializable {
 	}
 
 	protected void encodePassword() {
+		println("password $password")
 		password = springSecurityService?.passwordEncoder ? springSecurityService.encodePassword(password) : password
+		println("password $password")
 	}
 
 	static transients = ['springSecurityService']
