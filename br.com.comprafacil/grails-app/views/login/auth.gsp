@@ -44,7 +44,7 @@
                             <label for="remember_me"><g:message code='springSecurity.login.remember.me.label'/></label>
                         </div>
                         <div class="input-field col s6">
-                            <a href="/cadastro" class="labelSpace"><g:message code="default.registrarme.label"/></a>
+                            <a href="${createLink(controller: 'registraUsuario', action: 'cadastrar')}" class="labelSpace"><g:message code="default.registrarme.label"/></a>
                         </div>
                     </div>
 

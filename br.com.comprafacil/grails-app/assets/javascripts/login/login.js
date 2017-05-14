@@ -8,8 +8,12 @@ window.onload = function(){
 };
 
 logar = function(){
-    if( $("#username").val() != "" && $("#password").val() != "" ){
+    if( $("#username").val() != "" && $("#senha").val() != "" ){
         var url = '/login/authenticate';
+
+        console.log($("#username").val());
+        console.log($("#senha").val());
+
         $.ajax({
             url: url,
             data: {username: $("#username").val(), password: $("#senha").val(), 'remember-me': $("#remember_me").val()},

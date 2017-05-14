@@ -2,7 +2,10 @@ package br.com
 
 class ProdutoController extends CrudController{
     def entity = Produto
+
     def query = {
+        println(params)
+
         if(params.nome){
             ilike('nome',params.nome+ "%")
         }
@@ -15,15 +18,6 @@ class ProdutoController extends CrudController{
     }
 
     @Override
-    def beforeList () {
-        def model=[:]
-        List<Fabricante> fabricantes = Fabricante.findAll()
-        model.put("fabricantes",fabricantes)
-
-        return model
-    }
-
-    @Override
     def editaModelPadrao( def model ){
         List<Fabricante> fabricantes = Fabricante.findAll()
         model.put("fabricantes",fabricantes)
@@ -32,7 +26,18 @@ class ProdutoController extends CrudController{
 
     @Override
     def editaModelDoSave( def model ){
-        model = editaModelDoNovo(model)
+        model = editaModelPadrao(model)
+        return model
+    }
+
+    @Override
+    def editaModelDoEdit(def model){
+        model = editaModelPadrao(model)
+        return model
+    }
+
+    def editaModelDoList( def model ){
+        model = editaModelPadrao(model)
         return model
     }
 

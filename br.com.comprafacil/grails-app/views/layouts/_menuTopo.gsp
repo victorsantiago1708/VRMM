@@ -1,4 +1,4 @@
-<%@ page import="br.com.Role; br.com.Usuario" %>
+<%@ page import="br.com.UsuarioService; br.com.Role; br.com.Usuario" %>
 <div class="navbar-fixed blue darken-2">
     <nav class="blue darken-2">
         <div class="nav-wrapper blue darken-2">
@@ -13,7 +13,11 @@
                     </g:if>
                 </ul>
                 <ul class="right hide-on-med-and-down">
+
+                    <li><g:render template="/layouts/photouser"/></li>
+
                     <li><a href="#" style="text-transform: capitalize"><sec:loggedInUserInfo field="username" /></a></li>
+
                     <li><a href="${createLink(controller: "usuario", action: "perfil")}"><g:message code="menu.item.perfil.label"/> <i class="fa fa-user"></i></a></li>
                     <li>
                         <g:link controller="logout" >${message(code: 'menu.item.sair.label')} <i class="fa fa-power-off"></i></g:link>
