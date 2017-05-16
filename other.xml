@@ -63,4 +63,16 @@
       <option name="ENABLED" value="true" />
     </filter>
   </component>
+  <component name="SvnApplicationSettings">
+    <option name="myCheckoutURLs">
+      <list>
+        <option value="https://192.168.1.146/svn/fiber" />
+      </list>
+    </option>
+    <option name="myTypedURLs">
+      <list>
+        <option value="https://192.168.1.146/svn/fiber" />
+      </list>
+    </option>
+  </component>
 </application>
