@@ -11,6 +11,9 @@
                     <g:if test="${Usuario.hasAcesso(Role.findByAuthority('ROLE_ADMIN'))}">
                         <li><a href="${createLink(controller: "fabricante", action: "index")}" style="text-transform: capitalize"><g:message code="menu.item.fabricantes.label"/></a></li>
                     </g:if>
+                    <g:if test="${Usuario.hasAcesso(Role.findByAuthority('ROLE_ADMIN'))}">
+                        <li><a href="${createLink(controller: "cotacao", action: "index")}" style="text-transform: capitalize"><g:message code="menu.item.cotacao.label"/></a></li>
+                    </g:if>
                 </ul>
                 <ul class="right hide-on-med-and-down">
 

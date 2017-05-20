@@ -32,6 +32,7 @@ class UsuarioController extends CrudController {
 //    }
 
     def beforeSave(def entityInstance, def model){
+
         MultipartHttpServletRequest mRequest = (MultipartHttpServletRequest)request
         MultipartFile file = null
 
@@ -40,14 +41,12 @@ class UsuarioController extends CrudController {
         }
 
         if(file!=null){
-            Usuario user = Usuario.read( springSecurityService.getCurrentUserId() )
             Arquivo foto = new Arquivo()
             foto.nome = file.getOriginalFilename()
             foto.filedata = file.getBytes()
-            user.avatar = foto
-            user.save(flush: true, failOnError: true)
+            entityInstance.avatar = foto
+            entityInstance.save(flush:true, failOnError:true)
         }
-
     }
 
 }

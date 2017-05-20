@@ -1,6 +1,7 @@
 %{--verificar erros nos campos exp: ${entityInstance?.errors?.hasFieldErrors('descricao') --}%
 <g:render template="/layouts/msg"/>
 <form onsubmit="save('${createLink(controller: 'produto', action: 'save')}', this)" method="POST">
+    <input type="hidden" name="id" id="id" value="${entityInstance?.id}"/>
     <div class="row nopad" style="border-bottom: 1px solid #ccc;">
         <div class="col s8">
             <h1>

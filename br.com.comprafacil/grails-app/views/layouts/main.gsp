@@ -37,6 +37,8 @@
     </div>
 
     <input type="hidden" id="erroSwall" value="${message(code:'default.swall.error.label')}"/>
+    <input type="hidden" id="successSwall" value="${message(code:'default.swall.success.label')}"/>
+
 
     <script>
         $(document).ready(function() {

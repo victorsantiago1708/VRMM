@@ -91,7 +91,6 @@ class CrudController{
         def entityInstance = getEntityInstance()
         try {
             entityInstance.delete(flush: true)
-            println("teste")
             flash.message = message(code:'default.deleteSuccess.message')
         }catch (Exception e){
             flash.message = message(code:'default.cantDelete.message')

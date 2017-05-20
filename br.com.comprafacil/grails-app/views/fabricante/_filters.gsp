@@ -1,7 +1,7 @@
 <div class="row nopad" style="border-bottom: 1px solid #ccc;">
     <div class="col s9">
         <h1>
-            <g:message code="default.busca.label"/> <span >|</span> <g:message code="default.fabricante.label"/>
+            <g:message code="default.busca.label"/> <span >|</span> <g:message code="fabricante.label"/>
         </h1>
     </div>
     <div class="col s3 center" style="">
@@ -11,7 +11,7 @@
         </a>
     </div>
 </div>
-<g:form name="myForm" url="[action:'list',controller:'fabricante']" class="col s12">
+<form name="myForm" onsubmit="list('${createLink(controller: 'fabricante', action: 'list')}', this)" method="POST" class="col s12">
     <div class="row nopad">
         <div class="input-field col s3">
             <input id="nome" name="nome" type="text" >
@@ -25,4 +25,4 @@
             </button>
         </div>
     </div>
-</g:form>
+</form>

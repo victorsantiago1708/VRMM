@@ -42,9 +42,9 @@ class Usuario implements Serializable {
 	}
 
 	def beforeUpdate() {
-		if (isDirty('password')) {
-			encodePassword()
-		}
+		//if (isDirty('password')) {
+		encodePassword()
+		//}
 	}
 
 	protected void encodePassword() {

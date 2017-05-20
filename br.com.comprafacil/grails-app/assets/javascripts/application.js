@@ -102,7 +102,7 @@ list = function(path, form){
         data: data,
         url: path,
         success: function(data, textStatus) {
-            $('#conteudo').html(data);
+            $('body').html(data);
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) {}
     });
