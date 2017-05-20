@@ -9,6 +9,7 @@ class Produto {
     static belongsTo = [fabricante: Fabricante]
 
     static constraints = {
-
+        nome unique: true
+        codigo unique: true
     }
 }

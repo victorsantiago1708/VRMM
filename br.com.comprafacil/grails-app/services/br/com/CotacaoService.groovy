@@ -12,7 +12,7 @@ class CotacaoService {
         cotacao.produto = produto
         cotacao.cliente = Usuario.read(springSecurityService.currentUserId)
         cotacao.quantidade = quantidade
-
+        println("tesste")
         if(cotacao.errors.getErrorCount() < 1 && cotacao.validate()){
             if(cotacao.save(flush:true, failOnError:true)){
                 return true

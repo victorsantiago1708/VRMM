@@ -5,13 +5,12 @@
             <sec:ifLoggedIn>
                 <a href="${createLink(controller: "home", action: "index")}" class="brand-logo"><g:message code="comprafacil.label"/> </a>
                 <ul class="left hide-on-med-and-down" style="margin-left: 250px;">
-                    <g:if test="${Usuario.hasAcesso(Role.findByAuthority('ROLE_ADMIN'))}">
-                        <li><a href="${createLink(controller: "produto", action: "index")}" style="text-transform: capitalize"><g:message code="menu.item.produtos.label"/></a></li>
-                    </g:if>
+                    <li><a href="${createLink(controller: "produto", action: "index")}" style="text-transform: capitalize"><g:message code="menu.item.produtos.label"/></a></li>
+
                     <g:if test="${Usuario.hasAcesso(Role.findByAuthority('ROLE_ADMIN'))}">
                         <li><a href="${createLink(controller: "fabricante", action: "index")}" style="text-transform: capitalize"><g:message code="menu.item.fabricantes.label"/></a></li>
                     </g:if>
-                    <g:if test="${Usuario.hasAcesso(Role.findByAuthority('ROLE_ADMIN'))}">
+                    <g:if test="${Usuario.hasAcesso(Role.findByAuthority('ROLE_CLIENTE'))}">
                         <li><a href="${createLink(controller: "cotacao", action: "index")}" style="text-transform: capitalize"><g:message code="menu.item.cotacao.label"/></a></li>
                     </g:if>
                 </ul>

@@ -1,3 +1,4 @@
+<%@ page import="br.com.Role; br.com.Usuario" %>
 <div class="row nopad" style="border-bottom: 1px solid #ccc;">
     <div class="col s9">
         <h1>
@@ -5,10 +6,12 @@
         </h1>
     </div>
     <div class="col s3 center-align">
-        <a style="margin-top:25%;" class="waves-effect waves-light btn red" href="#" onclick="novo('${createLink(controller: 'produto', action: 'novo')}')">
-            <g:message code="default.novo.label"/>
-            <i class="fa fa-file fa-1x"></i>
-        </a>
+    <g:if test="${Usuario.hasAcesso(Role.findByAuthority('ROLE_FORNECEDOR'))}">
+            <a style="margin-top:25%;" class="waves-effect waves-light btn red" href="#" onclick="novo('${createLink(controller: 'produto', action: 'novo')}')">
+                <g:message code="default.novo.label"/>
+                <i class="fa fa-file fa-1x"></i>
+            </a>
+    </g:if>
     </div>
 </div>
 <form name="myForm" onsubmit="list('${createLink(controller: 'produto', action: 'list')}', this)" method="POST" class="col s12">

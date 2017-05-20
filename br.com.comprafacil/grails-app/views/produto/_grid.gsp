@@ -1,3 +1,4 @@
+<%@ page import="br.com.Role; br.com.Usuario" %>
 <g:render template="filters"/>
 <div class="row nopad">
     <table class="striped ">
@@ -30,11 +31,19 @@
                         ${produto?.fabricante?.nome}
                     </td>
                     <td>
-                        <a class="waves-effect waves-light btn red" href="${createLink(controller: 'produto', action: 'delete', id: produto?.id)}"><i class="fa fa-trash fa-1x"></i></a>
-                        <a class="waves-effect waves-light btn red" href="#" onclick="edit('${createLink(controller: 'produto', action: 'edit', id: produto?.id)}')"><i class="fa fa-pencil fa-1x"></i></a>
+                        <g:if test="${Usuario.hasAcesso(Role.findByAuthority('ROLE_FORNECEDOR'))}">
+                            <a class="waves-effect waves-light btn red" href="${createLink(controller: 'produto', action: 'delete', id: produto?.id)}"><i class="fa fa-trash fa-1x"></i></a>
+                            <a class="waves-effect waves-light btn red" href="#" onclick="edit('${createLink(controller: 'produto', action: 'edit', id: produto?.id)}')"><i class="fa fa-pencil fa-1x"></i></a>
+                        </g:if>
+                        <g:if test="${Usuario.hasAcesso(Role.findByAuthority('ROLE_CLIENTE'))}">
+                            <a class="modal-trigger waves-effect waves-light btn red cotar" href="#" data-prod-id="${produto?.id}"><i class="fa fa-cart-plus fa-1x"></i></a>
+                        </g:if>
                     </td>
                 </tr>
             </g:each>
         </tbody>
     </table>
+</div>
+<div id="modalCotacao">
+    <g:render template="modalCotacao"/>
 </div>

@@ -4,7 +4,7 @@
         <br/>
         <input type="hidden" id="id" name="id" value=""/>
         <div class="input-field" style="width: 80%;">
-            <input id="nomeProd" name="nomeProd" type="text" value="${produto?.nome}">
+            <input id="nomeProd" name="nomeProd" type="text" value="">
             <label for="nomeProd"><g:message code="produto.nome.label"/> </label>
         </div>
         <div class="input-field" style="width: 80%;">

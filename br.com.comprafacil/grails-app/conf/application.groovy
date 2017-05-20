@@ -8,11 +8,12 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/registraUsuario/cadastrar', access: ['permitAll']],
 	[pattern: '/registraUsuario/index', access: ['ROLE_ADMIN']],
 	[pattern: '/login/auth',     access: ['permitAll']],
-	[pattern: '/produto/**',     access: ['ROLE_ADMIN']],
-	[pattern: '/cotacao/**',     access: ['ROLE_ADMIN']],
-	[pattern: '/usuario/**',     access: ['ROLE_ADMIN']],
+	[pattern: '/produto/**',     access: ['ROLE_ADMIN', 'ROLE_CLIENTE', 'ROLE_FORNECEDOR']],
+	[pattern: '/cotacao/**',     access: ['ROLE_ADMIN', 'ROLE_CLIENTE']],
+	[pattern: '/usuario/**',     access: ['ROLE_ADMIN', 'ROLE_CLIENTE', 'ROLE_FORNECEDOR']],
 	[pattern: '/error',          access: ['permitAll']],
-	[pattern: '/index',          access: ['ROLE_ADMIN']],
+	[pattern: '/index',          access: ['ROLE_ADMIN', 'ROLE_CLIENTE', 'ROLE_FORNECEDOR']],
+	[pattern: '/home/**',          access: ['ROLE_ADMIN', 'ROLE_CLIENTE', 'ROLE_FORNECEDOR']],
 	[pattern: '/index.gsp',      access: ['permitAll']],
 	[pattern: '/shutdown',       access: ['permitAll']],
 	[pattern: '/assets/**',      access: ['permitAll']],
@@ -20,7 +21,7 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/**/css/**',      access: ['permitAll']],
 	[pattern: '/**/images/**',   access: ['permitAll']],
 	[pattern: '/**/favicon.ico', access: ['permitAll']],
-	[pattern: '/fabricante/**',  access: ['permitAll']],
+	[pattern: '/fabricante/**',  access: ['ROLE_ADMIN','ROLE_CLIENTE', 'ROLE_FORNECEDOR']],
 ]
 
 grails.plugin.springsecurity.filterChain.chainMap = [
