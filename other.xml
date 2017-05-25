@@ -70,4 +70,8 @@
       </list>
     </option>
   </component>
+  <component name="mvcRunTargetHistory">
+    <option value="#" />
+    <option value="clean" />
+  </component>
 </application>
